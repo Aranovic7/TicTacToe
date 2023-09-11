@@ -1,21 +1,25 @@
-//
-//  ViewController.swift
-//  MyTicTacToeApp
-//
-//  Created by Aran Ali on 2023-09-09.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var btnNavigate: UIButton!
+    
+    let ToSecondScreenSegue = "ToSecondScreenSegue"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        print("Hi")
 
     }
-
+    
+    
+    @IBAction func btnNavigate(_ sender: UIButton) {
+        performSegue(withIdentifier: ToSecondScreenSegue, sender: self)
+    }
+    
+    
+    
 
 }
 
