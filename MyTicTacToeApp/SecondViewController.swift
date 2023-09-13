@@ -1,29 +1,34 @@
-//
-//  SecondViewController.swift
-//  MyTicTacToeApp
-//
-//  Created by Aran Ali on 2023-09-11.
-//
-
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
+    @IBOutlet weak var txtPlayerOne: UITextField!
+    @IBOutlet weak var txtPlayerTwo: UITextField!
+    @IBOutlet weak var btnNavigateToGame: UIButton!
+    
+    let TO_GAME_SCREEN = "toGameScreen"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == TO_GAME_SCREEN {
+           
+           if let destinationVC = segue.destination as? GameViewController {
+               
+               guard let txtPlayerOne = txtPlayerOne.text else {return}
+               guard let txtPlayerTwo = txtPlayerTwo.text else {return}
+        
+               destinationVC.playerOneName = txtPlayerOne.isEmpty ? "X" : txtPlayerOne
+               destinationVC.playerTwoName = txtPlayerTwo.isEmpty ? "O" : txtPlayerTwo
+            
+           }
+        }
+            
+        }
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
