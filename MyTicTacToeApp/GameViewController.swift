@@ -2,7 +2,7 @@ import UIKit
 
 class GameViewController: UIViewController {
     
-    
+    // All my outlets
     @IBOutlet weak var turnSign: UILabel!
     @IBOutlet weak var a1: UIButton!
     @IBOutlet weak var a2: UIButton!
@@ -14,37 +14,41 @@ class GameViewController: UIViewController {
     @IBOutlet weak var c2: UIButton!
     @IBOutlet weak var c3: UIButton!
     
-    var currentPlayer: Int = 1
-    var isPlaying = false
-    var playerOneName: String?
-    var playerTwoName: String?
+    var currentPlayer: Int = 1 // To keep track of player
+    var playerOneName: String? // To store player one name in variable
+    var playerTwoName: String? // To store player two name in variable
     
     
-    var boardArray = ["", "", "", "", "", "", "", "", ""]
+    var boardArray = ["", "", "", "", "", "", "", "", ""] // An array of empty strings
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Kod som ska köras direkt när controllern visas upp
+        // Code that will run directly when controller shows
+       
+        // If it's player 1's turn -> update our labelSign text
         if (currentPlayer == 1) {
             turnSign.text = playerOneName
         } else if (playerOneName == "") {
-            turnSign.text = "Player X turn"
+            turnSign.text = "X"
             
-        }
+        } // If it's player 2's turn -> update our labelSign text
         if (currentPlayer == 2) {
             turnSign.text = playerTwoName
         } else if (playerTwoName == "") {
-            turnSign.text = "Player O turn"
+            turnSign.text = "O"
             }
         
         
         }
         
-    
+    /**
+     In this function I want to set a  title on a button and then switch turn when a button is pressed
+     All the buttons are attached to this function so that "let index" will include same terms for all my buttons
+     **/
     @IBAction func buttonTapped(_ sender: UIButton) {
-        let index = sender.tag // knapparna har en tagg som motsvarar deras position i boardArray
+        let index = sender.tag
         if boardArray[index] == "" {
             if currentPlayer == 1 {
                 boardArray[index] = "X"
@@ -56,20 +60,6 @@ class GameViewController: UIViewController {
             
             currentPlayer = 3 - currentPlayer
         }
-        
-        if let winner = checkForWinner() {
-            turnSign.text = winner
-        } else {
-            currentPlayer = 3 - currentPlayer
-            if (currentPlayer == 1) {
-                turnSign.text = playerOneName
-            } else {
-                turnSign.text = playerTwoName
-            }
-                
-        }
-        
-        
     }
     
     
