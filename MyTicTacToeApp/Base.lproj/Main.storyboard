@@ -181,29 +181,37 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="96M-ha-eO7">
                                                 <rect key="frame" x="0.0" y="0.0" width="114.66666666666667" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="5U5-Jm-CYU"/>
-                                                    <action selector="btnA1:" destination="PV6-qh-HKN" eventType="touchUpInside" id="hbd-eD-8ye"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="XHB-AB-A6r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmp-yd-uF5">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="SVc-K2-BZz"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="hge-UV-lNR"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBC-fr-ZTO">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="kMj-6U-vpW"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="dfS-AL-89r"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -214,28 +222,37 @@
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTz-kt-N5b">
                                                 <rect key="frame" x="0.0" y="0.0" width="114.66666666666667" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="ucr-6x-Iyc"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="nzQ-Nh-HQn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlG-RJ-S0m">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="4MM-34-AIs"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="sng-ip-cgk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzX-Vu-yR8">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="MBi-Rd-QBm"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="YPI-fU-tVO"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -246,28 +263,37 @@
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yil-uk-SPg">
                                                 <rect key="frame" x="0.0" y="0.0" width="114.66666666666667" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="MiE-wt-qde"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="XXn-mt-SGi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQ2-VD-cvm">
                                                 <rect key="frame" x="119.66666666666669" y="0.0" width="114.33333333333331" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="Lga-gi-KWp"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="gMT-zO-5Yr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgV-a9-yS7">
                                                 <rect key="frame" x="239.00000000000003" y="0.0" width="114.66666666666666" height="114.66666666666667"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" red="0.25802867099999999" green="0.2446018519" blue="0.70082400680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="AbD-LD-g2D"/>
+                                                    <action selector="buttonTapped:" destination="PV6-qh-HKN" eventType="touchUpInside" id="BIg-BJ-S28"/>
                                                 </connections>
                                             </button>
                                         </subviews>
