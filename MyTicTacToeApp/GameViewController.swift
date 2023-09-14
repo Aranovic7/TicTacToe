@@ -21,13 +21,16 @@ class GameViewController: UIViewController {
     var playerTwoName: String?
     
     
+    var boardArray = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Kod som ska köras direkt när controllern visas upp
         if (currentPlayer == 1) {
             turnSign.text = playerOneName
-        } else if (currentPlayer == 2 && playerOneName == "") {
+        } else if (playerOneName == "") {
             turnSign.text = "X"
             
         }
@@ -35,6 +38,19 @@ class GameViewController: UIViewController {
         
     }
     
+    
+    @IBAction func btnA1(_ sender: UIButton) {
+        let currentTitle = sender.currentTitle
+        var newTitle: String?
+        if  currentTitle == "" && currentPlayer == 1{
+            newTitle = "X"
+        } else if (currentTitle == "" && currentPlayer == 2) {
+            newTitle = "O"
+        }
+        sender.setTitle(newTitle, for: .normal)
+            
+        
+    }
     
     
 
@@ -48,7 +64,7 @@ class GameViewController: UIViewController {
         // Skapa en variabel för spelare 1 och spelare 2
         // Eller kanske bara en variabel
         // En variabel för currrent player, vi måste hålla koll på vems tur det är
-        // Om vi skapar outlets för varje kanpp, så kan vi kolla om knappen har en X symbol på sig, eller inte,
+        // Om vi skapar outlets för varje knapp, så kan vi kolla om knappen har en X symbol på sig, eller inte,
         // Om vi skapar en array med 9 siffror och varje siffra motsvarar en cell. Exempelvis att box nummer a1 har siffran 0 i vår array. Då kan jag checka att om vi har 0 i första siffran av vår array då är den tom, men om det står 1 så har spelare 1 lagt sin markering där,om det står 2 där då har spelare 2 lagt sin markering på a1. Exempelvis kan vår array se ut såhär: var board = [0, 0, 0, 0]. Sedan kanske man kan ha en funktion: func checkForWinner() {}
         /*
          Sedan kanske man har en funktion

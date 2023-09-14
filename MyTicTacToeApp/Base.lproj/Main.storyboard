@@ -185,6 +185,7 @@
                                                 <buttonConfiguration key="configuration" style="plain"/>
                                                 <connections>
                                                     <action selector="boardTapAction:" destination="PV6-qh-HKN" eventType="touchUpInside" id="5U5-Jm-CYU"/>
+                                                    <action selector="btnA1:" destination="PV6-qh-HKN" eventType="touchUpInside" id="hbd-eD-8ye"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmp-yd-uF5">
