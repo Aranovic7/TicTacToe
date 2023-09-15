@@ -4,15 +4,7 @@ class GameViewController: UIViewController {
     
     // All my outlets
     @IBOutlet weak var turnSign: UILabel!
-    @IBOutlet weak var a1: UIButton!
-    @IBOutlet weak var a2: UIButton!
-    @IBOutlet weak var a3: UIButton!
-    @IBOutlet weak var b1: UIButton!
-    @IBOutlet weak var b2: UIButton!
-    @IBOutlet weak var b3: UIButton!
-    @IBOutlet weak var c1: UIButton!
-    @IBOutlet weak var c2: UIButton!
-    @IBOutlet weak var c3: UIButton!
+    @IBOutlet var buttons: [UIButton]!
     
     var currentPlayer: Int = 1 // To keep track of player
     var playerOneName: String? // To store player one name in variable
