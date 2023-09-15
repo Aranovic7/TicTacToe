@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
         // Code that will run directly when controller shows
        
         // If it's player 1's turn -> update our labelSign text
-        if (currentPlayer == 1) {
+        if (currentPlayer == 1) { 
             turnSign.text = playerOneName
         } else if (playerOneName == "") {
             turnSign.text = "X"
@@ -51,6 +51,11 @@ class GameViewController: UIViewController {
             sender.setTitle(boardArray[index], for: .normal)
             
             currentPlayer = 3 - currentPlayer
+            
+            if let winner = checkForWinner() {
+                print("HELLO")
+            }
+            
         }
     }
     
