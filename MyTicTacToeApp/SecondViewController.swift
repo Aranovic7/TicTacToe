@@ -2,14 +2,18 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
+    let TO_GAME_SCREEN = "toGameScreen"
+    
     @IBOutlet weak var txtPlayerOne: UITextField!
     @IBOutlet weak var txtPlayerTwo: UITextField!
-    @IBOutlet weak var btnNavigateToGame: UIButton!
     
-    let TO_GAME_SCREEN = "toGameScreen"
+    @IBOutlet weak var btnNavigate: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     
@@ -24,6 +28,7 @@ class SecondViewController: UIViewController {
         
                destinationVC.playerOneName = txtPlayerOne.isEmpty ? "X" : txtPlayerOne
                destinationVC.playerTwoName = txtPlayerTwo.isEmpty ? "O" : txtPlayerTwo
+              
             
            }
         }

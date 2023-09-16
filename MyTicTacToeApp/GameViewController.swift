@@ -9,7 +9,7 @@ class GameViewController: UIViewController {
     var currentPlayer: Int = 1 // To keep track of player
     var playerOneName: String? // To store player one name in variable
     var playerTwoName: String? // To store player two name in variable
-    
+    var winner: String?
     
     var boardArray = ["", "", "", "", "", "", "", "", ""] // An array of empty strings
     
@@ -22,16 +22,9 @@ class GameViewController: UIViewController {
         // If it's player 1's turn -> update our labelSign text
         if (currentPlayer == 1) { 
             turnSign.text = playerOneName
-        } else if (playerOneName == "") {
-            turnSign.text = "X"
-            
-        } // If it's player 2's turn -> update our labelSign text
-        if (currentPlayer == 2) {
+        } else {
             turnSign.text = playerTwoName
-        } else if (playerTwoName == "") {
-            turnSign.text = "O"
-            }
-        
+        }
         
         }
         
@@ -44,6 +37,7 @@ class GameViewController: UIViewController {
         if boardArray[index] == "" {
             if currentPlayer == 1 {
                 boardArray[index] = "X"
+               
             } else {
                 boardArray[index] = "O"
             }
@@ -52,7 +46,14 @@ class GameViewController: UIViewController {
             
             currentPlayer = 3 - currentPlayer
             
+            if currentPlayer == 1 {
+                       turnSign.text = playerOneName
+                   } else {
+                       turnSign.text = playerTwoName
+                   }
+            
             if let winner = checkForWinner() {
+                self.winner = winner
                 print("HELLO")
             }
             
