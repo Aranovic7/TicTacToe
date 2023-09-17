@@ -10,8 +10,9 @@ class GameViewController: UIViewController {
     var playerOneName: String? // To store player one name in variable
     var playerTwoName: String? // To store player two name in variable
     var winner: String?
-    
+    var countWinner: Int? // To store count of wins
     var boardArray = ["", "", "", "", "", "", "", "", ""] // An array of empty strings
+ 
     
     
     override func viewDidLoad() {
@@ -53,11 +54,16 @@ class GameViewController: UIViewController {
                    }
             
             if let winner = checkForWinner() {
-                self.winner = winner
-                print("HELLO")
+                    self.winner = winner
+                    print(winner)
+                for buttons in buttons {
+                    buttons.isEnabled = false
+                }
+                }
+                
+                
             }
             
-        }
     }
     
     
@@ -70,15 +76,15 @@ class GameViewController: UIViewController {
         for pattern in winningPatterns {
             let positions = pattern.map { boardArray[$0] }
             if positions == ["X", "X", "X"] {
-                return "Player One win!"
+                return "Congrats \(playerOneName ?? "X"), you won the game!"
             } else if positions == ["O", "O", "O"] {
-                return "Player two win!"
+                return "Congrats \(playerTwoName ?? "O"), you won the game!"
             }
         }
         if boardArray.contains("") {
             return nil
         } else {
-            return "Oavgjort!"
+            return "Ajdå, det blev oavgjort!"
         }
     }
     

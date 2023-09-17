@@ -6,13 +6,11 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var txtPlayerOne: UITextField!
     @IBOutlet weak var txtPlayerTwo: UITextField!
-    
     @IBOutlet weak var btnNavigate: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
