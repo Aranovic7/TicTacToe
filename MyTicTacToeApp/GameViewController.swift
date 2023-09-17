@@ -10,25 +10,25 @@ class GameViewController: UIViewController {
     var playerOneName: String? // To store player one name in variable
     var playerTwoName: String? // To store player two name in variable
     var winner: String?
-    var countWinner: Int? // To store count of wins
     var boardArray = ["", "", "", "", "", "", "", "", ""] // An array of empty strings
- 
+    var countWinner: [String: Int] = [:]
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Code that will run directly when controller shows
-       
+        
         // If it's player 1's turn -> update our labelSign text
-        if (currentPlayer == 1) { 
+        if (currentPlayer == 1) {
             turnSign.text = playerOneName
         } else {
             turnSign.text = playerTwoName
         }
         
-        }
-        
+    }
+    
     /**
      In this function I want to set a  title on a button and then switch turn when a button is pressed
      All the buttons are attached to this function so that "let index" will include same terms for all my buttons
@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         if boardArray[index] == "" {
             if currentPlayer == 1 {
                 boardArray[index] = "X"
-               
+                
             } else {
                 boardArray[index] = "O"
             }
@@ -48,22 +48,21 @@ class GameViewController: UIViewController {
             currentPlayer = 3 - currentPlayer
             
             if currentPlayer == 1 {
-                       turnSign.text = playerOneName
-                   } else {
-                       turnSign.text = playerTwoName
-                   }
-            
-            if let winner = checkForWinner() {
-                    self.winner = winner
-                    print(winner)
-                for buttons in buttons {
-                    buttons.isEnabled = false
-                }
-                }
-                
-                
+                turnSign.text = playerOneName
+            } else {
+                turnSign.text = playerTwoName
             }
             
+            if let winnerMessage = checkForWinner() {
+                self.winner = winnerMessage
+                myAlertMessage(winnerMessage: winnerMessage)
+            } else if !boardArray.contains("") {
+                myAlertMessage(winnerMessage: "It's a tie!")
+            }
+            
+            
+        }
+        
     }
     
     
@@ -76,16 +75,58 @@ class GameViewController: UIViewController {
         for pattern in winningPatterns {
             let positions = pattern.map { boardArray[$0] }
             if positions == ["X", "X", "X"] {
-                return "Congrats \(playerOneName ?? "X"), you won the game!"
+                countWinner["Crosses", default: 0] += 1
+                return "Congrats \(playerOneName ?? "X"), you won!"
             } else if positions == ["O", "O", "O"] {
-                return "Congrats \(playerTwoName ?? "O"), you won the game!"
+                countWinner["Noughts", default: 0] += 1
+                return "Congrats \(playerTwoName ?? "O"), you won!"
             }
+            
         }
+        
         if boardArray.contains("") {
             return nil
         } else {
-            return "Ajdå, det blev oavgjort!"
+            return "Oh, it's a beutiful tie!"
         }
+    }
+    
+    func myAlertMessage(winnerMessage: String) {
+        let crossesCount = countWinner["Crosses"] ?? 0
+        let noughtsCount = countWinner["Noughts"] ?? 0
+        
+        let crossesText = "Crosses: \(crossesCount)"
+        let noughtsText = "Noughts: \(noughtsCount)"
+        
+        let messageText = "Do you wanna play again?\n\n\(crossesText)\n\(noughtsText)"
+
+        let myAlertController = UIAlertController(title: winnerMessage, message: messageText, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) {_ in
+            self.resetGame()
+        }
+        let noAction = UIAlertAction(title: "No", style: .cancel) {_ in
+            self.dismissGame()
+            
+        }
+        
+        myAlertController.addAction(yesAction)
+        myAlertController.addAction(noAction)
+        
+        present(myAlertController, animated: true, completion: nil)
+    }
+    
+    func resetGame() {
+        boardArray = ["", "", "", "", "", "", "", "", ""]
+        for button in buttons {
+            button.setTitle("", for: .normal)
+            button.isEnabled = true
+        }
+        currentPlayer = 1
+        turnSign.text = playerOneName
+    }
+    
+    func dismissGame() {
+        dismiss(animated: true, completion: nil)
     }
     
 }
