@@ -1,5 +1,6 @@
 import UIKit
 
+
 class GameViewController: UIViewController {
     
     // All my outlets
@@ -11,14 +12,16 @@ class GameViewController: UIViewController {
     var playerTwoName: String? // To store player two name in variable
     var winner: String?
     var boardArray = ["", "", "", "", "", "", "", "", ""] // An array of empty strings
-    var countWinner: [String: Int] = [:]
+    var countPlayer1 = 0
+    var countPlayer2 = 0
+    let playAgainstComputer = GameSettings.shared.playAgainstComputer
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Code that will run directly when controller shows
+        boardArray = ["", "", "", "", "", "", "", "", ""]
         
         // If it's player 1's turn -> update our labelSign text
         if (currentPlayer == 1) {
@@ -26,7 +29,14 @@ class GameViewController: UIViewController {
         } else {
             turnSign.text = playerTwoName
         }
-        
+    }
+    
+    func switchPlayers() {
+        if currentPlayer == 1 {
+            currentPlayer = 2
+        } else {
+            currentPlayer = 1
+        }
     }
     
     /**
@@ -38,14 +48,15 @@ class GameViewController: UIViewController {
         if boardArray[index] == "" {
             if currentPlayer == 1 {
                 boardArray[index] = "X"
-                
+                sender.setTitle("X", for: .normal)
             } else {
                 boardArray[index] = "O"
+                sender.setTitle("O", for: .normal)
             }
             
             sender.setTitle(boardArray[index], for: .normal)
             
-            currentPlayer = 3 - currentPlayer
+            switchPlayers()
             
             if currentPlayer == 1 {
                 turnSign.text = playerOneName
@@ -56,77 +67,110 @@ class GameViewController: UIViewController {
             if let winnerMessage = checkForWinner() {
                 self.winner = winnerMessage
                 myAlertMessage(winnerMessage: winnerMessage)
-            } else if !boardArray.contains("") {
-                myAlertMessage(winnerMessage: "It's a tie!")
             }
-            
-            
+        } else if !boardArray.contains("") {
+            myAlertMessage(winnerMessage: "It's a tie!")
+        }
+        if GameSettings.shared.playAgainstComputer && currentPlayer == 2 {
+            playAgainstNPC()
         }
         
     }
     
-    
+    // A function to check for a winner
     func checkForWinner() -> String? {
         let winningPatterns: [[Int]] = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horisontalt
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Verticalt
-            [0, 4, 8], [2, 4, 6] // Diagonalt
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
         ]
+        
+        if GameSettings.shared.playAgainstComputer && currentPlayer == 2 {
+            if !boardArray.contains("") {
+                return "It's a tie!"
+            }
+            return nil
+        }
         for pattern in winningPatterns {
             let positions = pattern.map { boardArray[$0] }
             if positions == ["X", "X", "X"] {
-                countWinner["Crosses", default: 0] += 1
+                countPlayer1 += 1
                 return "Congrats \(playerOneName ?? "X"), you won!"
             } else if positions == ["O", "O", "O"] {
-                countWinner["Noughts", default: 0] += 1
-                return "Congrats \(playerTwoName ?? "O"), you won!"
+                    countPlayer2 += 1
+                    return "Congrats \(playerTwoName ?? "O"), you won!"
+                }
+            }
+        
+                if boardArray.contains("") {
+                    return nil
+                } else {
+                    return "Oh, it's a beutiful tie!"
+                }
+            }
+            
+            // This i my alert message after every win/tie
+            func myAlertMessage(winnerMessage: String) {
+                
+                let crossesText = "Crosses: \(countPlayer1)"
+                let noughtsText = "Noughts: \(countPlayer2)"
+                
+                let messageText = "Do you wanna play again?\n\n\(crossesText)\n\(noughtsText)"
+                
+                let myAlertController = UIAlertController(title: winnerMessage, message: messageText, preferredStyle: .alert)
+                let yesAction = UIAlertAction(title: "Yes", style: .default) {_ in
+                    self.resetGame()
+                }
+                let noAction = UIAlertAction(title: "No", style: .cancel) {_ in
+                    self.dismissGame()
+                }
+                
+                myAlertController.addAction(yesAction)
+                myAlertController.addAction(noAction)
+                
+                present(myAlertController, animated: true, completion: nil)
+            }
+            
+            // This function allows me to close the game in GameViewController and go back to SecondViwController
+            func dismissGame() {
+                dismiss(animated: true, completion: nil)
+                
+            }
+            
+            // This function resets the game and prepare for a new game
+            func resetGame() {
+                boardArray = ["", "", "", "", "", "", "", "", ""]
+                for button in buttons {
+                    button.setTitle("", for: .normal)
+                    button.isEnabled = true
+                }
+                currentPlayer = 1
+                turnSign.text = playerOneName
+            }
+            
+            func makeComputerMove() {
+                var emptySpots = [Int]()
+                for (index, value) in boardArray.enumerated() {
+                    if value.isEmpty {
+                        emptySpots.append(index)
+                    }
+                }
+                
+                if let randomIndex = emptySpots.randomElement(){
+                    let buttonToPress = buttons[randomIndex]
+                    buttonTapped(buttonToPress)
+                }
+            }
+            
+            /*
+             This function controlls if the game is between a user and computer
+             If it's true, it allows the computer to make a move
+             */
+            func playAgainstNPC() {
+                if GameSettings.shared.playAgainstComputer && currentPlayer == 2 {
+                    makeComputerMove()
+                }
             }
             
         }
-        
-        if boardArray.contains("") {
-            return nil
-        } else {
-            return "Oh, it's a beutiful tie!"
-        }
-    }
     
-    func myAlertMessage(winnerMessage: String) {
-        let crossesCount = countWinner["Crosses"] ?? 0
-        let noughtsCount = countWinner["Noughts"] ?? 0
-        
-        let crossesText = "Crosses: \(crossesCount)"
-        let noughtsText = "Noughts: \(noughtsCount)"
-        
-        let messageText = "Do you wanna play again?\n\n\(crossesText)\n\(noughtsText)"
-
-        let myAlertController = UIAlertController(title: winnerMessage, message: messageText, preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "Yes", style: .default) {_ in
-            self.resetGame()
-        }
-        let noAction = UIAlertAction(title: "No", style: .cancel) {_ in
-            self.dismissGame()
-            
-        }
-        
-        myAlertController.addAction(yesAction)
-        myAlertController.addAction(noAction)
-        
-        present(myAlertController, animated: true, completion: nil)
-    }
-    
-    func resetGame() {
-        boardArray = ["", "", "", "", "", "", "", "", ""]
-        for button in buttons {
-            button.setTitle("", for: .normal)
-            button.isEnabled = true
-        }
-        currentPlayer = 1
-        turnSign.text = playerOneName
-    }
-    
-    func dismissGame() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-}

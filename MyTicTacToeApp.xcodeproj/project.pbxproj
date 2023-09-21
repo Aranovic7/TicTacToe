@@ -18,6 +18,7 @@
 		B05DB0D92AACDCB90042476B /* MyTicTacToeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB0D82AACDCB90042476B /* MyTicTacToeAppUITests.swift */; };
 		B05DB0DB2AACDCB90042476B /* MyTicTacToeAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB0DA2AACDCB90042476B /* MyTicTacToeAppUITestsLaunchTests.swift */; };
 		B05DB0EA2AAF5CC80042476B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB0E92AAF5CC80042476B /* SecondViewController.swift */; };
+		B097BDDF2AB9D050009B40D5 /* GameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B097BDDE2AB9D050009B40D5 /* GameSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B05DB0D82AACDCB90042476B /* MyTicTacToeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicTacToeAppUITests.swift; sourceTree = "<group>"; };
 		B05DB0DA2AACDCB90042476B /* MyTicTacToeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTicTacToeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B05DB0E92AAF5CC80042476B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B097BDDE2AB9D050009B40D5 /* GameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				B05DB0C52AACDCB90042476B /* Info.plist */,
 				B05DB0E92AAF5CC80042476B /* SecondViewController.swift */,
 				B05BEFE92AAF663500F5D38E /* GameViewController.swift */,
+				B097BDDE2AB9D050009B40D5 /* GameSettings.swift */,
 			);
 			path = MyTicTacToeApp;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				B05BEFEA2AAF663500F5D38E /* GameViewController.swift in Sources */,
 				B05DB0EA2AAF5CC80042476B /* SecondViewController.swift in Sources */,
+				B097BDDF2AB9D050009B40D5 /* GameSettings.swift in Sources */,
 				B05DB0BC2AACDCB70042476B /* ViewController.swift in Sources */,
 				B05DB0B82AACDCB70042476B /* AppDelegate.swift in Sources */,
 				B05DB0BA2AACDCB70042476B /* SceneDelegate.swift in Sources */,
