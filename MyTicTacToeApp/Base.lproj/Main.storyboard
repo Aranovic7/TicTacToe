@@ -140,7 +140,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnNavigate:" destination="Qo9-hd-7wX" eventType="touchUpInside" id="XRT-qs-ymG"/>
-                                    <segue destination="PV6-qh-HKN" kind="show" identifier="toGameScreen" id="VpU-RI-CCl"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="21l-Wa-k1B">
@@ -171,11 +170,12 @@
                         <outlet property="btnPlayNPC" destination="6cz-hL-aJq" id="G6u-ph-JGY"/>
                         <outlet property="txtPlayerOne" destination="sm3-0G-Hhb" id="Dyq-Jc-bVj"/>
                         <outlet property="txtPlayerTwo" destination="21l-Wa-k1B" id="62d-i4-ptd"/>
+                        <segue destination="PV6-qh-HKN" kind="show" identifier="toGameScreen" id="Qel-GX-6T5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4c-F0-En0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.4656488549617" y="12.67605633802817"/>
+            <point key="canvasLocation" x="1572" y="4"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="dDe-Rt-t22">

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B04ECF952ABF258A008ED836 /* LogicAndRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04ECF942ABF258A008ED836 /* LogicAndRules.swift */; };
 		B05BEFEA2AAF663500F5D38E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05BEFE92AAF663500F5D38E /* GameViewController.swift */; };
 		B05DB0B82AACDCB70042476B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB0B72AACDCB70042476B /* AppDelegate.swift */; };
 		B05DB0BA2AACDCB70042476B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05DB0B92AACDCB70042476B /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B04ECF942ABF258A008ED836 /* LogicAndRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicAndRules.swift; sourceTree = "<group>"; };
 		B05BEFE92AAF663500F5D38E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B05DB0B42AACDCB70042476B /* MyTicTacToeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTicTacToeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B05DB0B72AACDCB70042476B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				B05DB0E92AAF5CC80042476B /* SecondViewController.swift */,
 				B05BEFE92AAF663500F5D38E /* GameViewController.swift */,
 				B097BDDE2AB9D050009B40D5 /* GameSettings.swift */,
+				B04ECF942ABF258A008ED836 /* LogicAndRules.swift */,
 			);
 			path = MyTicTacToeApp;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				B05BEFEA2AAF663500F5D38E /* GameViewController.swift in Sources */,
 				B05DB0EA2AAF5CC80042476B /* SecondViewController.swift in Sources */,
+				B04ECF952ABF258A008ED836 /* LogicAndRules.swift in Sources */,
 				B097BDDF2AB9D050009B40D5 /* GameSettings.swift in Sources */,
 				B05DB0BC2AACDCB70042476B /* ViewController.swift in Sources */,
 				B05DB0B82AACDCB70042476B /* AppDelegate.swift in Sources */,
